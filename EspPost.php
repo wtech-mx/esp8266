@@ -1,7 +1,7 @@
 <?php
 
-$user = "root";
-$pass = "";
+$user = "esp8266";
+$pass = "esp8266";
 $server = "localhost";
 $db ="esp8266";
 $con = mysqli_connect($server, $user, $pass, $db);
@@ -9,7 +9,7 @@ $con = mysqli_connect($server, $user, $pass, $db);
 if ($con) {
 
 
-    echo "Conexión con base de datos exitosa!";
+    echo "Conexi贸n con base de datos exitosa!";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['temperatura']) && isset($_POST['humedad'])) {
@@ -30,9 +30,10 @@ if ($con) {
             } else {
                 echo "Falla! Registro BD";
             }
-
-        }if(isset($_POST['latitud']) && isset($_POST['longitud'])) {
-
+        }
+        
+        if(isset($_POST['latitud']) && isset($_POST['longitud'])) {
+            
             $latitud = $_POST['latitud'];
             $longitud = $_POST['longitud'];
             
@@ -50,8 +51,8 @@ if ($con) {
             } else {
                 echo "Falla! Registro BD";
             }
-
-        else {
+            
+        }else {
             echo "Datos de latitud o longitud no recibidos.";
         }
     }
