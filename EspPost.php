@@ -17,7 +17,7 @@ if ($con) {
             $humedad = $_POST['humedad'];
             
             date_default_timezone_set('America/Mexico');
-            $fecha_actual = date("Y-m-d H:i:s");
+            $fecha_actual = date("Y-m-d");
             
             $consulta = "INSERT INTO dht11(temperatura, humedad, fecha) VALUES (?, ?, ?)";
             $stmt = mysqli_prepare($con, $consulta);
@@ -38,7 +38,7 @@ if ($con) {
             $longitud = $_POST['longitud'];
             
             date_default_timezone_set('America/Mexico');
-            $fecha_actual = date("Y-m-d H:i:s");
+            $fecha_actual = date("Y-m-d");
             
             $consulta = "INSERT INTO gps(latitud, longitud, fecha) VALUES (?, ?, ?)";
             $stmt = mysqli_prepare($con, $consulta);
